@@ -7,14 +7,18 @@ body {
     text-align: center;
 }
 
+.inputBill{
+    margin: 2rem;
+}
 
-.input {
+.inputCash {
     margin: 2rem;
 }
 
 .label {
     font-size: 1.2rem;
-    padding-right: 0.5rem;
+    margin: 1rem;
+    display: block;
 }
 
 .inputfield {
@@ -31,7 +35,7 @@ body {
 }
 
 .button {
-    display: block;
+    /* display: block; */
     margin: auto;
     font-size: 1.2rem;
     margin-top: 2rem;

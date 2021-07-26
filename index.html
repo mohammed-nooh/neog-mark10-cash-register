@@ -11,16 +11,16 @@
 
 <body>
     <h1>Cash Register</h1>
-    <div class="input">
+    <div class="inputBill">
         <label class="label" for="billAmt">Enter Bill Amount</label>
         <input class="inputfield" type="number" id="billAmt" placeholder="Enter the bill amount">
-        <button id="next" class="button">Next</button>
+        <div><button id="next" class="nextBtn button">Next</button></div>
     </div>
 
-    <div class="input">
-        <label class="label" for="cashAmt">Enter Cash given</label>
-        <input class="inputfield" type="number" id="cashAmt" placeholder="Enter cash given">
-        <button id="submit" class="button">Submit</button>
+    <div class="inputCash">
+        <!-- <label class="label" for="cashAmt">Enter Cash given</label> -->
+        <input class="inputfield hidden" type="number" id="cashAmt" placeholder="Enter cash given">
+        <div><button id="submit" class="subBtn button hidden">Submit</button></div>
     </div>
 
     <div><p class="message hidden"></p></div>
