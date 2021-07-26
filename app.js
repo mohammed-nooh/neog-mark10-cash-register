@@ -9,6 +9,10 @@ const message = document.querySelector(".message");
 const nextBtn = document.querySelector(".nextBtn");
 const submit = document.querySelector(".subBtn");
 
+function clear(){
+    
+}
+
 function showError(text){
     message.classList.remove("hidden");
     message.innerText=text;
@@ -25,6 +29,7 @@ function nextfn(){
         message.classList.add("hidden");
         nextBtn.style.display="none";
         cash.classList.remove("hidden");
+        submit.classList.remove("hidden");
     }
 }
 
@@ -34,7 +39,7 @@ nextBtn.addEventListener("click",nextfn);
 console.log("hi");
 
 function clickHandler() {
-    // const billAmt = Number(bill.value);
+    const billAmt = Number(bill.value);
     const cashAmt = Number(cash.value);
     let balance = cashAmt - billAmt;
     // console.log(billAmt, cashAmt);
@@ -42,7 +47,14 @@ function clickHandler() {
     if(balance===0){
         showError("No balance");
     }
+    else if(balance<0){
+        showError("Not enough Cash");
+    }
+    else{
+
+    }
 
 };
 
 submit.addEventListener("click", clickHandler);
+
