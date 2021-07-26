@@ -21,6 +21,18 @@ body {
     font-size: 1.2rem;
 }
 
+.message {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.button {
+    display: block;
+    margin: auto;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
 .tablediv {
     margin-top: 3rem;
 }
