@@ -4,13 +4,16 @@ const bill = document.querySelector("#billAmt");
 const cash = document.querySelector("#cashAmt");
 
 // console.log(`this is the balance${balance}`);
-
+const denominations=document.querySelectorAll(".noNotes");
 const message = document.querySelector(".message");
 const nextBtn = document.querySelector(".nextBtn");
 const submit = document.querySelector(".subBtn");
+const arrayNotes = [2000, 500, 100, 20, 10, 5, 1];
 
-function clear(){
-    
+function clearNotes(){
+    for(let notes of denominations){
+        notes.innerText="";
+    }
 }
 
 function showError(text){
@@ -38,7 +41,7 @@ nextBtn.addEventListener("click",nextfn);
 
 console.log("hi");
 
-function clickHandler() {
+function submitHandler() {
     const billAmt = Number(bill.value);
     const cashAmt = Number(cash.value);
     let balance = cashAmt - billAmt;
@@ -51,10 +54,12 @@ function clickHandler() {
         showError("Not enough Cash");
     }
     else{
+        clearNotes();
+        
 
     }
 
 };
 
-submit.addEventListener("click", clickHandler);
+submit.addEventListener("click", submitHandler);
 
