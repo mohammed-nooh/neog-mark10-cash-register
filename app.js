@@ -9,6 +9,17 @@ const message = document.querySelector(".message");
 const nextBtn = document.querySelector(".nextBtn");
 const submit = document.querySelector(".subBtn");
 const arrayNotes = [2000, 500, 100, 20, 10, 5, 1];
+const tableElement=document.querySelector(".table")
+
+function compare(reminder,noteAmt,i){
+
+    if(reminder>=noteAmt){
+        let noofNotes=Math.floor(reminder/noteAmt);
+        reminder=reminder-(noofNotes*noteAmt);
+        denominations[i].innerText=`${noofNotes}`;
+    }
+    return reminder;
+}
 
 function clearNotes(){
     for(let notes of denominations){
@@ -47,17 +58,37 @@ function submitHandler() {
     let balance = cashAmt - billAmt;
     // console.log(billAmt, cashAmt);
     // console.log(balance);
-    if(balance===0){
-        showError("No balance");
-    }
-    else if(balance<0){
-        showError("Not enough Cash");
-    }
-    else{
-        clearNotes();
-        
+
+    if(cashAmt<1){
+        showError("enter valid cash amount");
+        tableElement.classList.add("hidden");
 
     }
+    else{
+        if(balance===0){
+            showError("No balance to be returned");
+            tableElement.classList.add("hidden");
+
+        }
+        else if(balance<0){
+            showError("Sorry pay more cash");
+            tableElement.classList.add("hidden");
+
+        }
+        else{
+            tableElement.classList.remove("hidden");
+            message.classList.add("hidden");
+            clearNotes();
+            for(let i=0;i<arrayNotes.length;i++){
+                balance=compare(balance,arrayNotes[i],i);
+            }
+    
+        }
+    }
+
+
+
+    
 
 };
 
