@@ -64,7 +64,11 @@ function submitHandler() {
         tableElement.classList.add("hidden");
 
     }
-    else{
+    else if(billAmt<1){
+        showError("enter valid Bill amount");
+        tableElement.classList.add("hidden");
+
+    }else{
         if(balance===0){
             showError("No balance to be returned");
             tableElement.classList.add("hidden");
